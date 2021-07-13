@@ -68,9 +68,26 @@ class link_list(object):
             print(temp_n.data)
             temp_n = temp_n.next
 
+    # function to check palindrome
+    def check_palindrome(self):
+        stack = []
+        t_node = self.root
+
+        while t_node:
+            stack.append(t_node.val)
+            t_node = t_node.next
+
+        t_node = self.root
+        while t_node:
+            t = stack.pop()
+            if t != t_node.val:
+                return False
+            t_node = t_node.next
+
+        return True
+
 
 if __name__ == '__main__':
-
     l_list = link_list()
     l_list.insert_node(10)
     l_list.insert_node(6)
@@ -89,3 +106,8 @@ if __name__ == '__main__':
     print("Reverse Link List")
     l_list.reverse_list()
     print(l_list.print_list())
+    print
+
+    print("Check Palindrome")
+    print(l_list.check_palindrome())
+    print

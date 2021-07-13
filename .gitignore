@@ -130,3 +130,6 @@ dmypy.json
 
 # IntelliJ Folder
 .idea
+
+# DS_Store
+.DS_Store
